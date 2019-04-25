@@ -1,5 +1,6 @@
 package studio.eyesthetics.criminalintent;
 
+import java.text.DateFormat;
 import java.util.Date;
 import java.util.UUID;
 
@@ -7,13 +8,13 @@ public class Crime {
     private UUID mId;
     private String mTitle;
     private Date mDate;
-    private Date mTime;
+    //private Date mTime;
     private boolean msolved;
 
     public Crime() {
         mId = UUID.randomUUID();
         mDate = new Date();
-        mTime = new Date();
+        //mTime = new Date();
     }
 
     @Override
@@ -41,13 +42,13 @@ public class Crime {
         this.mDate = mDate;
     }
 
-    public Date getmTime() {
+/*    public Date getmTime() {
         return mTime;
     }
 
     public void setmTime(Date mTime) {
         this.mTime = mTime;
-    }
+    }*/
 
     public boolean isMsolved() {
         return msolved;
@@ -55,5 +56,9 @@ public class Crime {
 
     public void setMsolved(boolean msolved) {
         this.msolved = msolved;
+    }
+
+    public String getDateString() {
+        return DateFormat.getDateTimeInstance(DateFormat.FULL, DateFormat.SHORT).format(mDate);
     }
 }

@@ -12,8 +12,6 @@ import android.widget.TimePicker;
 
 import java.util.Calendar;
 import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.Locale;
 
 
 public class TimePickerFragment extends DialogFragment {
@@ -35,7 +33,7 @@ public class TimePickerFragment extends DialogFragment {
         mTime = (Date) getArguments().getSerializable(EXTRA_TIME);
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(mTime);
-        int hour = calendar.get(Calendar.HOUR);
+        int hour = calendar.get(Calendar.HOUR_OF_DAY);
         int minute = calendar.get(Calendar.MINUTE);
 
         View v = getActivity().getLayoutInflater().inflate(R.layout.dialog_time, null);
@@ -48,8 +46,13 @@ public class TimePickerFragment extends DialogFragment {
         timePicker.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
             @Override
             public void onTimeChanged(TimePicker view, int hourOfDay, int minute) {
-                mTime.setHours(hourOfDay);
-                mTime.setMinutes(minute);
+                Calendar cal = Calendar.getInstance();
+                cal.setTime(mTime);
+                cal.set(Calendar.HOUR_OF_DAY, hourOfDay);
+                cal.set(Calendar.MINUTE, minute);
+                mTime = cal.getTime();
+                //mTime.setHours(hourOfDay);
+                //mTime.setMinutes(minute);
                 getArguments().putSerializable(EXTRA_TIME, mTime);
             }
         });
