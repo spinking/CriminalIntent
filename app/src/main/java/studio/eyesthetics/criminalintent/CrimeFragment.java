@@ -1,7 +1,6 @@
 package studio.eyesthetics.criminalintent;
 
 import android.app.Activity;
-import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -16,7 +15,6 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 
-import java.text.DateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -139,7 +137,9 @@ public class CrimeFragment extends Fragment {
             if(choice == 0) {
                 return;
             }
-            if(choice == DataTimeChoiceFragment.CHOICE_TIME) editTimeDialog();
+            if(choice == DataTimeChoiceFragment.CHOICE_TIME) {
+                editTimeDialog();
+            }
             else if(choice == DataTimeChoiceFragment.CHOICE_DATE) editDateDialog();
         }
     }
