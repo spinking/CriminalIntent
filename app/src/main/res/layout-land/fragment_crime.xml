@@ -15,6 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/crime_title_hint"
+        android:autofillHints="@string/new_crime"
         />
 
     <TextView
@@ -30,9 +31,11 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/crime_date"
+            android:id="@+id/choice_button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
             android:layout_weight="1" />
 
         <CheckBox

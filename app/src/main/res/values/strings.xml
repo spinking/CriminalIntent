@@ -9,4 +9,10 @@
     <string name="date_picker_title">Choice Date</string>
     <string name="time_picker_title">Choice Time</string>
     <string name="choice_title">Choice date or time</string>
+    <string name="new_crime">New Crime</string>
+    <string name="show_subtitle">Show Subtitle</string>
+    <string name="hide_subtittle">Hide Subtitle</string>
+    <string name="subtitle">If you see something, say something.</string>
+    <string name="delete_crime">Delete</string>
+    <string name="empty_list">List of crimes empty</string>
 </resources>
